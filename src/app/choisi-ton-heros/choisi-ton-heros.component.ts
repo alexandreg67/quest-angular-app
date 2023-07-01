@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
 import { HEROS } from '../mock-hero';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choisi-ton-heros',
@@ -10,13 +11,16 @@ export class ChoisiTonHerosComponent {
 
   listeHeros: Hero[] = HEROS;
 
-    ngOnInit(): void {
-    this.selectHero(this.listeHeros[0])
+  constructor(private router: Router) {
     
   }
 
-  selectHero(hero: Hero) {
-    console.log(`Vous avez cliqué sur le héro : ${hero.name}`);
+  ngOnInit(): void {
+    
+  }
+
+  goToCombatHeroes(hero: Hero) {
+    this.router.navigate(['/combat', hero.id])
   }
 
 }

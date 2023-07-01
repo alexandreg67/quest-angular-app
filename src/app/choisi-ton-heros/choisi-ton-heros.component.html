@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let hero of listeHeros" class="col m4 s6">
-            <div class="card horizontal" (click)="selectHero(hero)" appBorderCard>
+            <div class="card horizontal" (click)="goToCombatHeroes(hero)" appBorderCard>
                 <div class="card-image">
                     <img [src]="hero.picture" alt="">
                 </div>
