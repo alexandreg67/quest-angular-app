@@ -1,27 +1,7 @@
 <h1 class="center">Choisi ton Héros ! </h1>
 
-<div class="container">
-    <div class="row">
-        <div *ngFor="let hero of listeHeros"  class="col m4 s6">
-            <div class="card horizontal" (click)="selectHero(hero)" appBorderCard>
-                <div class="card-image" >
-                    <img [src]="hero.picture" alt="">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p> {{ hero.name }} </p>
-                        <p><small>PV : {{ hero.hp }} </small></p>
-                        <p><small>Spé : {{ hero.attaqueSpeciale }} </small></p>
-                        <span class=" {{ hero.type | herosTypeColor }} ">
-                            {{ hero.type }}
-                        </span>
-                    </div>
-                </div>
+<router-outlet></router-outlet>
 
-            </div> 
-        </div>
-    </div>
-</div>
 
 
 
