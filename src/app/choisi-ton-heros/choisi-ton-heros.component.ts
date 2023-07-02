@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROS } from '../mock-hero';
+import { HEROSPARAM } from '../mock-hero';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ChoisiTonHerosComponent {
 
-  listeHeros: Hero[] = HEROS;
+  listeHeros = HEROSPARAM;
 
   constructor(private router: Router) {
     
@@ -19,7 +19,7 @@ export class ChoisiTonHerosComponent {
     
   }
 
-  goToCombatHeroes(hero: Hero) {
+  goToCombatHeroes(hero : any) {
     this.router.navigate(['/combat', hero.id])
   }
 

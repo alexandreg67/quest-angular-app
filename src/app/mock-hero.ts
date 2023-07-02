@@ -1,6 +1,5 @@
-import { Hero } from './hero';
   
-export const HEROS: Hero[] = [
+export const HEROSPARAM = [
     {
         id: 1,
         life: 100,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HEROS } from '../mock-hero';
+import { HEROSPARAM } from '../mock-hero';
 import { Hero } from '../hero';
 import { Oppenent } from '../oppenent';
 import { OPPENENTS } from '../mock-oppenent';
@@ -12,22 +12,25 @@ import { OPPENENTS } from '../mock-oppenent';
 })
 export class CombatHerosComponent implements OnInit{
 
-  herosListe : Hero[];
-  hero: Hero | undefined;
+  herosListe: any;
+  heroParam: any;
+  hero: Hero;
   oppenentListe : Oppenent[];
-  oppenent: Oppenent | undefined;
+  oppenent: Oppenent;
   oppenentType: string;
 
   constructor(private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.herosListe = HEROS;
+    this.herosListe = HEROSPARAM;
     this.oppenentListe = OPPENENTS;
 
     const heroId: string | null = this.route.snapshot.paramMap.get('id');
     if (heroId) {
-      this.hero = this.herosListe.find(hero => hero.id == +heroId)
+      this.heroParam = this.herosListe.find((hero: { id: number; }) => hero.id == +heroId);
+      this.hero = new Hero(this.heroParam.name, this.heroParam.power, this.heroParam.life, this.heroParam.attaqueSpeciale, this.heroParam.picture, this.heroParam.type);
+
     } 
 
 
@@ -44,21 +47,18 @@ export class CombatHerosComponent implements OnInit{
     this.router.navigate(['/list-heros']);
   }
 
-  // goToFight() {
-  //   this.hero.attack(hero2);
-  //   hero2.attack(hero1);
-  //   if (!hero1.isAlive() && !hero2.isAlive()) {
-  //       console.log("It's a Draw");
-  //       gameOver = true;
+  goToFight() {
+    this.hero.attack(this.oppenent);
+    this.oppenent.attack(this.hero);
+    if (!this.hero.isAlive() && !this.oppenent.isAlive()) {
+        console.log("It's a Draw");
 
-  //   }else if (!hero1.isAlive()){
-  //       console.log(`${hero2.getName()} wins`);
-  //       gameOver = true;
-  //   }else if (!hero2.isAlive()) {
-  //       console.log(`${hero1.getName()} wins`);
-  //       gameOver = true;
-  //   }    
-  // }
+    }else if (!this.hero.isAlive()){
+        console.log(`${this.oppenent.name} wins`);
+    }else if (!this.oppenent.isAlive()) {
+        console.log(`${this.hero.name} wins`);
+    }    
+  }
 
 
 }

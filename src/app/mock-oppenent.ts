@@ -1,3 +1,4 @@
+import { Hero } from "./hero";
 import { Oppenent } from "./oppenent";
 
 export const OPPENENTS: Oppenent[] = [
@@ -9,6 +10,12 @@ export const OPPENENTS: Oppenent[] = [
         attaqueSpeciale: 10,
         picture: "../assets/21474462.jpg",
         type: "",
+        attack(hero: Hero): void{
+            hero.life = hero.life - this.power   
+        },
+        isAlive():boolean{
+            return this.life > 0
+        }
     },
     {
         id: 2,
@@ -18,5 +25,11 @@ export const OPPENENTS: Oppenent[] = [
         attaqueSpeciale: 10,
         picture: "../assets/21474462.jpg",
         type: "",
+        attack(hero: Hero): void{
+            hero.life = hero.life - this.power   
+        },
+        isAlive():boolean{
+            return this.life > 0
+        }
     }
 ]

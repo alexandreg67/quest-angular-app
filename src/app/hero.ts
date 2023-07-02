@@ -1,3 +1,5 @@
+import { Oppenent } from "./oppenent";
+
 export class Hero {
   id: number;
   life: number;
@@ -7,43 +9,52 @@ export class Hero {
   picture: string;
   type: string;
 
-  // getId():number {
-  //   return this.id
-  // }
+  constructor(name:string, power: number, life:number, attaqueSpeciale:number, picture: string, type: string) {
+      this.name = name;
+      this.power = power;
+      this.life = life;
+      this.attaqueSpeciale = attaqueSpeciale;
+      this.picture = picture,
+      this.type = type;
+  }
 
-  // getName():string {
-  //     return this.name
-  // }
+  getId():number {
+    return this.id
+  }
 
-  // setName(name:string):void {
-  //     this.name = name
-  // }
+  getName():string {
+      return this.name
+  }
 
-  // getPower():number {
-  //     return this.power
-  // }
+  setName(name:string):void {
+      this.name = name
+  }
 
-  // setPower(power:number) {
-  //     this.power = power
-  // }
+  getPower():number {
+      return this.power
+  }
 
-  // getAttaqueSpeciale(): number {
-  //   return this.attaqueSpeciale
-  // }
+  setPower(power:number) {
+      this.power = power
+  }
 
-  // getLife():number {
-  //     return this.life
-  // }
+  getAttaqueSpeciale(): number {
+    return this.attaqueSpeciale
+  }
 
-  // setLife(life:number) {
-  //     this.life = life
-  // }
+  getLife():number {
+      return this.life
+  }
 
-  // attack(opponent: Hero): void{
-  //     opponent.setLife(opponent.getLife() - (this.power))     
-  // }
+  setLife(life:number) {
+      this.life = life
+  }
 
-  // isAlive():boolean{
-  //     return this.life > 0
-  // }
+  attack(opponent: Oppenent): void{
+      opponent.life = opponent.life - this.power   
+  }
+
+  isAlive():boolean{
+      return this.life > 0
+  }
 }
