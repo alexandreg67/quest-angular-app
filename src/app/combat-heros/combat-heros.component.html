@@ -1,63 +1,50 @@
-<!-- <div class="container">
-<div *ngIf="hero" class="row">
-    <div class="col m4 ">
-        <div class="card hoverable">
-            <div class="bold center card-title"> {{ hero.name}} </div>
-            <div class="card-image" style="height: 40%;">
-                <img [src]="hero.picture">
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    <table class="bordered striped">
-                        <tbody>
-                            <tr>
-                                <td>Points de vie</td>
-                                <td>{{ hero.hp }}</td>
-                            </tr>
-                            <tr>
-                                <td>Attaque Spécial</td>
-                                <td>{{ hero.attaqueSpeciale }}</td>
-                            </tr>
-                            <tr>
-                                <td>Types</td>
-                                <td>
-                                    <span class="{{ hero.type | herosTypeColor }}">{{
-                                        hero.type }}</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="center card-action">
-                        <a>Attaque</a>
-                        <a (click)="goToHerosListe()">Abandon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container"> -->
 
 <div class="container">
-    <div *ngIf="hero" class="row">
-        <div class="col m4 s6">
-            <div class="card vertical">
-                <p class="center card-title"> {{ hero.name }} </p>
-                <div class="card-image">
-                    <img [src]="hero.picture" alt="">
-                </div>
-                <div class="card-stacked">
-                    <div class="center card-content">
-                        <p><small>PV : {{ hero.hp }} </small></p>
-                        <p><small>Attaque Spéciale : {{ hero.attaqueSpeciale }} </small></p>
-                        <p class=" {{ hero.type | herosTypeColor }} ">
-                            {{ hero.type }}
-                        </p>
+    <div class="row">
+        <div *ngIf="hero">
+            <div class="col m4 s6">
+                <div class="card vertical">
+                    <p class="center card-title"> {{ hero.name }} </p>
+                    <div class="card-image">
+                        <img [src]="hero.picture" alt="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="center card-content">
+                            <p><small>PV : {{ hero.life }} </small></p>
+                            <p><small>Attaque Spéciale : {{ hero.attaqueSpeciale }} </small></p>
+                            <p class=" {{ hero.type| herosTypeColor }} ">
+                                {{ hero.type }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="center card-action">
-                    <a>Attaque</a>
-                    <a (click)="goToHerosListe()">Abandon</a>
+                <div>
+                    <!-- <a class="btn" (click)="goToFight()" >Attaque</a> -->
+                    <a class="btn" (click)="goToHerosListe()">Abandon</a>
+                </div>
+                </div>
+            </div>
+
+            <div class="col m4 s6" style="height: 150px;">
+
+        </div>
+
+        <div *ngIf="oppenent">
+            <div class="col m4 " >
+                <div class="card vertical">
+                    <p class="center card-title"> {{ oppenent.name }} </p>
+                    <div class="card-image">
+                        <img [src]="oppenent.picture" alt="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="center card-content">
+                            <p><small>PV : {{ oppenent.life }} </small></p>
+                            <p><small>Attaque Spéciale : {{ oppenent.attaqueSpeciale }} </small></p>
+                            <p class=" {{ oppenentType | herosTypeColor }} ">
+                                {{ oppenentType }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,5 +52,5 @@
 </div>
 
 <div>
-<h4 *ngIf='!hero' class="center">Aucun pokémon à afficher !</h4>
+<h4 *ngIf='!hero' class="center">Aucun héros à afficher !</h4>
 </div>

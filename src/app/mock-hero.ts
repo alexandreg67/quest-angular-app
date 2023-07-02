@@ -3,16 +3,18 @@ import { Hero } from './hero';
 export const HEROS: Hero[] = [
     {
         id: 1,
-        name: "Arkan",
-        hp: 100,
+        life: 100,
+        power: 15,
         attaqueSpeciale: 8,
+        name: "Arkan",
         picture: "../assets/21474462.jpg",
         type: "feu",
     },
     {
         id: 2,
+        life: 120,
+        power:15,
         name: "Lyra",
-        hp: 120,
         attaqueSpeciale: 6,
         picture: "../assets/21474462.jpg",
         type: "eau",
@@ -20,7 +22,8 @@ export const HEROS: Hero[] = [
     {
         id: 3,
         name: "Aiden",
-        hp: 80,
+        life: 80,
+        power: 15,
         attaqueSpeciale: 12,
         picture: "../assets/21474462.jpg",
         type: "feu",
@@ -28,7 +31,8 @@ export const HEROS: Hero[] = [
     {
         id: 4,
         name: "Elara",
-        hp: 150,
+        life: 150,
+        power: 15,
         attaqueSpeciale: 1,
         picture: "../assets/21474462.jpg",
         type: "eau",
@@ -36,7 +40,8 @@ export const HEROS: Hero[] = [
     {
         id: 5,
         name: "Magnus",
-        hp: 110,
+        life: 110,
+        power: 15,
         attaqueSpeciale: 9,
         picture: "../assets/21474462.jpg",
         type: "feu",
@@ -44,7 +49,8 @@ export const HEROS: Hero[] = [
     {
         id: 6,
         name: "Seraphina",
-        hp: 110,
+        life: 110,
+        power:15,
         attaqueSpeciale: 9,
         picture: "../assets/21474462.jpg",
         type: "plante",
@@ -52,7 +58,8 @@ export const HEROS: Hero[] = [
     {
         id: 7,
         name: "Draven",
-        hp: 130,
+        life: 130,
+        power: 15,
         attaqueSpeciale: 6,
         picture: "../assets/21474462.jpg",
         type: "feu",
@@ -60,7 +67,8 @@ export const HEROS: Hero[] = [
     {
         id: 8,
         name: "Freya",
-        hp: 70,
+        life: 70,
+        power: 15,
         attaqueSpeciale: 14,
         picture: "../assets/21474462.jpg",
         type: "plante",
@@ -68,7 +76,8 @@ export const HEROS: Hero[] = [
     {
         id: 9,
         name: "Orion",
-        hp: 118,
+        life: 118,
+        power: 15,
         attaqueSpeciale: 6,
         picture: "../assets/21474462.jpg",
         type: "plante",
@@ -76,7 +85,8 @@ export const HEROS: Hero[] = [
     {
         id: 10,
         name: "Lumiya",
-        hp: 120,
+        life: 120,
+        power: 15,
         attaqueSpeciale: 5,
         picture: "../assets/21474462.jpg",
         type: "eau",
@@ -84,7 +94,8 @@ export const HEROS: Hero[] = [
     {
         id: 11,
         name: "Xander",
-        hp: 100,
+        life: 100,
+        power: 15,
         attaqueSpeciale: 8,
         picture: "../assets/21474462.jpg",
         type: "plante",
@@ -92,7 +103,8 @@ export const HEROS: Hero[] = [
     {
         id: 12,
         name: "Nova",
-        hp: 140,
+        life: 140,
+        power: 15,
         attaqueSpeciale: 2,
         picture: "../assets/21474462.jpg",
         type: "eau",
