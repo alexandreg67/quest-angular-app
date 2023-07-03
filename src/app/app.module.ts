@@ -7,6 +7,7 @@ import { HerosBorderCardDirective } from './border-card.directive';
 import { herosTypeColorPipe } from './heros-type-color.pipe';
 import { ChoisiTonHerosComponent } from './choisi-ton-heros/choisi-ton-heros.component';
 import { CombatHerosComponent } from './combat-heros/combat-heros.component';
+import { VainqueurComponent } from './vainqueur/vainqueur.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CombatHerosComponent } from './combat-heros/combat-heros.component';
     HerosBorderCardDirective,
     herosTypeColorPipe,
     ChoisiTonHerosComponent,
-    CombatHerosComponent
+    CombatHerosComponent,
+    VainqueurComponent
   ],
   imports: [
     BrowserModule,

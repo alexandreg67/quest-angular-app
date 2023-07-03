@@ -33,13 +33,17 @@ export class CombatHerosComponent implements OnInit{
 
     } 
 
-
     let rand: number = Math.floor(Math.random() * 3);
     let type: string[] = ["feu", "eau", "plante"];
-    this.oppenentType = type[rand];
+    let oppenentRandType = type[rand];
 
     let randOppenent: number = Math.floor(Math.random() * 2);
-    this.oppenent = this.oppenentListe[randOppenent];    
+    let oppenentRand = this.oppenentListe[randOppenent]; 
+
+    console.log("oppenentRandType ", oppenentRandType);
+    
+    
+    this.oppenent = new Oppenent(oppenentRand.name, oppenentRand.power, oppenentRand.life, oppenentRand.attaqueSpeciale, oppenentRand.picture, oppenentRandType) 
 
   }
 
@@ -47,18 +51,19 @@ export class CombatHerosComponent implements OnInit{
     this.router.navigate(['/list-heros']);
   }
 
-  goToFight() {
-    this.hero.attack(this.oppenent);
-    this.oppenent.attack(this.hero);
-    if (!this.hero.isAlive() && !this.oppenent.isAlive()) {
+  goToFight(hero: Hero, opponent: Oppenent) {
+    hero.attack(opponent);
+    opponent.attack(hero);
+    if (!hero.isAlive() && !opponent.isAlive()) {
+        this.router.navigate(['app-vainqueur'])
         console.log("It's a Draw");
 
-    }else if (!this.hero.isAlive()){
-        console.log(`${this.oppenent.name} wins`);
-    }else if (!this.oppenent.isAlive()) {
-        console.log(`${this.hero.name} wins`);
+    }else if (!hero.isAlive()){
+        this.router.navigate(['app-vainqueur'])
+        console.log(`${opponent.name} wins`);
+    }else if (!opponent.isAlive()) {
+        this.router.navigate(['app-vainqueur'])
+        console.log(`${hero.name} wins`);
     }    
   }
-
-
 }

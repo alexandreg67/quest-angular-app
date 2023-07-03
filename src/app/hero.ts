@@ -51,7 +51,17 @@ export class Hero {
   }
 
   attack(opponent: Oppenent): void{
-      opponent.life = opponent.life - this.power   
+      let attaque = 0;
+      if (opponent.type === "eau" && this.type === "plante") {
+        attaque = this.attaqueSpeciale * 2;
+      } else if (opponent.type === "feu" && this.type === "eau") {
+        attaque = this.attaqueSpeciale * 2
+      }else if (opponent.type === "plante" && this.type === "feu") {
+        attaque = this.attaqueSpeciale * 2
+      }else {
+        attaque = this.attaqueSpeciale
+      }
+      opponent.life = opponent.life - (this.power + attaque) 
   }
 
   isAlive():boolean{

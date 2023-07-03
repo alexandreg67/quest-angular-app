@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div>
-                    <a class="btn" (click)="goToFight()" >Attaque</a>
+                    <a class="btn" (click)="goToFight(hero, oppenent)" >Attaque</a>
                     <a class="btn" (click)="goToHerosListe()">Abandon</a>
                 </div>
                 </div>
@@ -40,8 +40,8 @@
                         <div class="center card-content">
                             <p><small>PV : {{ oppenent.life }} </small></p>
                             <p><small>Attaque Spéciale : {{ oppenent.attaqueSpeciale }} </small></p>
-                            <p class=" {{ oppenentType | herosTypeColor }} ">
-                                {{ oppenentType }}
+                            <p class=" {{ oppenent.type | herosTypeColor }} ">
+                                {{ oppenent.type }}
                             </p>
                         </div>
                     </div>

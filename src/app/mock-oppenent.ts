@@ -1,7 +1,7 @@
 import { Hero } from "./hero";
 import { Oppenent } from "./oppenent";
 
-export const OPPENENTS: Oppenent[] = [
+export const OPPENENTS = [
     {
         id: 1,
         name: "Louis",
